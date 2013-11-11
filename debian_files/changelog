@@ -1,0 +1,5 @@
+tseriesconfig (6.2.0-1) unstable; urgency=low
+
+  * first debianized version of tseriesconfig 
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Sun, 09 Dec 2012 13:00:29 +0100
