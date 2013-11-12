@@ -13,35 +13,35 @@ dist_etctseries_DATA = \
 
 styledir        = $(datarootdir)/tseries/@PVERSION@/style
 dist_style_DATA = \
-	share/style/tsDiagrams.def\
-	share/style/accumprecip.style           \
-	share/style/eps_rr24.style		\
-	share/style/eps_rr24t2m_noens_op.style	\
-	share/style/eps_rr.style		\
-	share/style/eps_rrt2m.style		\
-	share/style/eps_t2m.style		\
-	share/style/eps_z500.style		\
-	share/style/fxqgram.style		\
-	share/style/glameps_ff.style		\
-	share/style/glameps_rr.style		\
-	share/style/glameps_t2m.style		\
-	share/style/glameps_z500.style		\
-	share/style/lameps_ff.style		\
-	share/style/lameps_plum_rr.style	\
-	share/style/lameps_rr.style		\
-	share/style/lameps_t2m.style		\
-	share/style/lameps_z500.style		\
-	share/style/marinogram.style		\
-	share/style/maritim.style		\
-	share/style/meteogram_batch.style	\
-	share/style/meteogram_ff.style		\
-	share/style/meteogram.style		\
-	share/style/proff_combi.style		\
-	share/style/proff_edit.style		\
-	share/style/rrqgram.style		\
-	share/style/snow_meteogram.style	\
-	share/style/t2mqgram.style		\
-	share/style/webogram.style		
+	style/tsDiagrams.def\
+	style/accumprecip.style		  \
+	style/eps_rr24.style		\
+	style/eps_rr24t2m_noens_op.style	\
+	style/eps_rr.style		\
+	style/eps_rrt2m.style		\
+	style/eps_t2m.style		\
+	style/eps_z500.style		\
+	style/fxqgram.style		\
+	style/glameps_ff.style		\
+	style/glameps_rr.style		\
+	style/glameps_t2m.style		\
+	style/glameps_z500.style		\
+	style/lameps_ff.style		\
+	style/lameps_plum_rr.style	\
+	style/lameps_rr.style		\
+	style/lameps_t2m.style		\
+	style/lameps_z500.style		\
+	style/marinogram.style		\
+	style/maritim.style		\
+	style/meteogram_batch.style	\
+	style/meteogram_ff.style		\
+	style/meteogram.style		\
+	style/proff_combi.style		\
+	style/proff_edit.style		\
+	style/rrqgram.style		\
+	style/snow_meteogram.style	\
+	style/t2mqgram.style		\
+	style/webogram.style		
 
 
 
