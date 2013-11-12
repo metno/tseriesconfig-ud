@@ -5,7 +5,6 @@ AM_INIT_AUTOMAKE
 METNO_PVERSION
 AC_CONFIG_FILES([
 	Makefile
-	etc/tsDiagrams.def
 	etc/tseries.ctl
 ])
 AC_OUTPUT

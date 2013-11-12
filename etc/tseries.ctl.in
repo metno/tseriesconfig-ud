@@ -46,13 +46,14 @@ Etc= $(Sysconfdir)/tseries/@PVERSION@
 Images=$(Prefix)/share/pixmaps/tseries/@PVERSION@/
 Doc=$(Prefix)/share/doc/tseries-@PVERSION@
 Lang=$(Prefix)/share/tseries/@PVERSION@/lang
+Styles=$(Prefix)/share/tseries/@PVERSION@/style
 
 #------------------
 
 <files>
 
-Defs=$(Etc)/tsDiagrams.def
-Configure=$(Home)/.tseries/tseries.conf
+Defs=$(Styles)/tsDiagrams.def
+Configure=$(Home)/.tseries/tseries-@PVERSION@.conf
 WeatherSymbols=$(Etc)/symbols.def
 stdImage=$(Images)/ts_station.xpm
 finImage=$(Images)/ts_find.xpm
