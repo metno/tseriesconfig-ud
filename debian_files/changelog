@@ -1,3 +1,22 @@
+tseriesconfig (6.2.1-2) unstable; urgency=low
+
+  * fixed eps_plum_rr style
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Tue, 12 Nov 2013 14:27:20 +0100
+
+tseriesconfig (6.2.1-1) unstable; urgency=low
+
+  * fixed eps_plum_rr style
+  * flattend structure
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Tue, 12 Nov 2013 14:16:01 +0100
+
+tseriesconfig (6.2.0-2) unstable; urgency=low
+
+  * fixed eps_plum_rr style
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Tue, 12 Nov 2013 14:13:32 +0100
+
 tseriesconfig (6.2.0-1) unstable; urgency=low
 
   * first debianized version of tseriesconfig 
