@@ -89,6 +89,10 @@ PARAM=TANM,x,x,x
 NAME=Havdiagram
 STYLEFILE=meteogram.style
 
+[LEGALMODELS]
+MODEL=Nordic_4km
+MODEL=Nordic_4km_resid
+
 [MODELINDEPENDENT]
 PARAM=HS,x,x,x
 PARAM=CUV,x,x,x
