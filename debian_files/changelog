@@ -1,3 +1,12 @@
+tseriesconfig (6.4.0-1) unstable; urgency=low
+
+  * New version
+  * Removed doc from distribution
+  * Added feature - get formatted nowtime
+  * Added feature - assign fimex xml file to stream
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Fri, 17 Jan 2014 10:55:57 +0100
+
 tseriesconfig (6.3.1-1) unstable; urgency=low
 
   * reimplemented havdiagram that was somehow lost in the process

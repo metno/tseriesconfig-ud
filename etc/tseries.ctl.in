@@ -44,7 +44,6 @@ day=-2
 
 Etc= $(Sysconfdir)/tseries/@PVERSION@
 Images=$(Prefix)/share/pixmaps/tseries/@PVERSION@/
-Doc=$(Prefix)/share/doc/tseries-@PVERSION@
 Lang=$(Prefix)/share/tseries/@PVERSION@/lang
 Styles=$(Prefix)/share/tseries/@PVERSION@/style
 
@@ -70,9 +69,12 @@ commonBookmarks=$(Etc)/tseries-bookmarks.VNN
 
 []
 
+# Define a timestamp to get data from an URL
+# nowtime=%d-%a
+# run man date for formatting help
 
 <fimex>
-FimexStreamTypes= netcdf
+FimexStreamTypes= netcdf : ncml
 
 
 <server>
@@ -83,12 +85,8 @@ Name=tseries
 Command=$(Prefix)/bin/coserver4
 
 <doc>
-mainsource=index.html
-mainname=Brukerveiledning
-mainlink=START
-newssource=news.html
-newsname=Nyheter
-newslink=
+docURL=https://wiki.met.no/tseries/doc
+newsURL=https://wiki.met.no/tseries/news
 
 
 # -------------------------------------------------
@@ -587,6 +585,7 @@ UU,0,x,x,RAW:VV,0,x,x,RAW
 
 
 
+
 <klima>
 url=http://klapp.oslo.dnmi.no/metnopub/production/metno
 maxDistance=50
@@ -622,6 +621,11 @@ TAXM,0,x,OBS,x=TAXM
 
 <streams>
 
+#
+# add Fimex xml configfile by
+# DataConfig=filename
+# to each stream
+
 CollectionName=FimexData
 PreferredDiagram=Meteogram
 InitialOpen=0
@@ -638,6 +642,7 @@ DataDescription=AROME-PP
 DataType=netcdf
 Contents=x,x,AROME-PP,x
 
+
 [VNN:VV]
 DataFile=$(Adata)/AROME_Norway25_??_DEF.nc
 DataDescription=AROME-PP
@@ -650,7 +655,7 @@ DataFile=$(Adata)/t2m500yrKF??.nc
 DataDescription=T2M_PP
 DataType=netcdf
 Contents=x,x,T2M_PP,x
- 
+
 []
 
 
