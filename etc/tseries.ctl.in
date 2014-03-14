@@ -70,12 +70,12 @@ PreferredDiagram=Meteogram
 InitialOpen=0
 
 
-DataFile=$(HDFdatadir)/ecatmo_myanmar00.hdf
+DataFile=$(HDFdatadir)/ecatmo_bangladesh12.hdf
 DataDescription=ECMWF12
 DataType=HDF
 Contents=x,x,ECMWF,12
 
-DataFile=$(HDFdatadir)/ecatmo_myanmar12.hdf
+DataFile=$(HDFdatadir)/ecatmo_bangladesh00.hdf
 DataDescription=ECMWF00
 DataType=HDF
 Contents=x,x,ECMWF,00
@@ -88,7 +88,7 @@ Contents=x,x,ECMWF,00
 #
 # -------------------------------------------------
 
-<streams>
+
 
 #
 # add Fimex xml configfile by
@@ -101,7 +101,7 @@ InitialOpen=0
 
 # widcard example arome_norway_default2_5km_20??????_??.nc
 
-DataFile=$(NCdatadir)/2008.nc
+DataFile=$(NCdatadir)/DMH_wrf.nc
 DataDescription=WRF
 DataType=netcdf : wrf
 Contents=x,x,WRF,x
