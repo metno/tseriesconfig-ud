@@ -1,6 +1,7 @@
 [MODELS]
 ECMWF=Ecmwf
 WRF=WRF
+ECFELT=ECFELT
 
 # Standard meteogram
 [DIAGRAM]
@@ -135,6 +136,7 @@ STYLEFILE=meteogram.style
 
 [LEGALMODELS]
 MODEL=WRF
+MODEL=ECFELT
 
 
 
@@ -175,6 +177,7 @@ STYLEFILE=meteogram.style
 
 [LEGALMODELS]
 MODEL=WRF
+MODEL=ECFELT
 
 
 
@@ -215,6 +218,7 @@ STYLEFILE=accumprecip.style
 
 [LEGALMODELS]
 MODEL=WRF
+MODEL=ECFELT
 
 
 

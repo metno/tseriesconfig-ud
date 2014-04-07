@@ -9,6 +9,7 @@ Sysconfdir= @sysconfdir@
 # put in Datadirectory here
 HDFdatadir=/opdata/metcorr
 NCdatadir=/disk1/opdata_offline
+FELTdatadir=/opdata/ec
 
 #------------------
 
@@ -42,7 +43,7 @@ commonBookmarks=$(Etc)/tseries-bookmarks.common
 # run man date for formatting help
 
 <fimex>
-FimexStreamTypes= netcdf : ncml
+FimexStreamTypes= netcdf : ncml : felt
 
 
 <server>
@@ -70,12 +71,12 @@ PreferredDiagram=Meteogram
 InitialOpen=0
 
 
-DataFile=$(HDFdatadir)/ecatmo_bangladesh12.hdf
+DataFile=$(HDFdatadir)/ecatmo12.hdf
 DataDescription=ECMWF12
 DataType=HDF
 Contents=x,x,ECMWF,12
 
-DataFile=$(HDFdatadir)/ecatmo_bangladesh00.hdf
+DataFile=$(HDFdatadir)/ecatmo00.hdf
 DataDescription=ECMWF00
 DataType=HDF
 Contents=x,x,ECMWF,00
@@ -100,12 +101,16 @@ PreferredDiagram=Meteogram
 InitialOpen=0
 
 # widcard example arome_norway_default2_5km_20??????_??.nc
-
-DataFile=$(NCdatadir)/DMH_wrf.nc
+                        
+DataFile=$(NCdatadir)/201?????00.nc
 DataDescription=WRF
 DataType=netcdf : wrf
 Contents=x,x,WRF,x
  
+DataFile=$(FELTdatadir)/ec_atmo_geo_00_mad.felt
+DataDescription=ECFELT
+DataType= felt : netcdf
+DataConfig=/usr/share/diana/3.33/fimex/fimex_grid_106.xml
 
 
 
@@ -125,13 +130,15 @@ RRAC,x,x,x = netcdf | precipitation_amount_acc          | kg/m^2
 TTPP,x,x,x = netcdf | air_temperature_2m                | Celsius
 
 ## Wrf data
+##Endret her etter navn i nc-fil(ncview)
 
-MSLP,x,x,x = wrf | air_pressure_at_sea_level        | hPa     
-TT,x,x,x   = wrf | T2                               | Celsius
-UU,x,x,x   = wrf | U10                              | kt  | 
-VV,x,x,x   = wrf | V10                              | kt  | 
-FG,x,x,x   = wrf | CLDFRA                           | 0.01| bottom_top 0 1
-CL,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 10 1
-CM,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 15 1
-CH,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 20 1
-RRAC,x,x,x = wrf | RAINNC                           | mm
+MSLP,x,x,x = wrf | air_pressure_at_sea_level  | hPa	
+TT,x,x,x   = wrf | t2m			      | Celsius
+UU,x,x,x   = wrf | u10m			      | kt  
+VV,x,x,x   = wrf | v10m			      | kt  
+TCC,x,x,x  = wrf | cloud		      | 1    | bottom_top 10 1
+FG,x,x,x   = wrf | CLDFRA		      | 0.01 | bottom_top 0  1
+CL,x,x,x   = wrf | CLDFRA		      | 1    | bottom_top 10 1
+CM,x,x,x   = wrf | CLDFRA		      | 1    | bottom_top 15 1
+CH,x,x,x   = wrf | CLDFRA		      | 1    | bottom_top 20 1
+RRAC,x,x,x = wrf | rain			      | mm
