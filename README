@@ -1,0 +1,32 @@
+Tseries config files for export
+
+to build the config files manually (for development purposes)
+
+run
+
+./autogen.sh
+./configure --prefix=[your target directory]
+make install
+
+
+after that - run tseries.bin -s [your target directory]/tseries/[version number]/tseries.ctl
+
+
+
+To install the config files properly:
+
+run
+
+debuild -us -uc -b
+
+it will generate a debian package in ../
+
+install it with dpkg -i [debian_package]
+
+
+You have to adapt your version number to the version number of tseries
+change the package number in configure.ac (AC_INIT) to fit the tseries version
+remember to adapt the changelog as well (with the proper version number)
+
+
+

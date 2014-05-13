@@ -1,0 +1,51 @@
+tseriesconfig (6.4.0-1) unstable; urgency=low
+
+  * New version
+  * Removed doc from distribution
+  * Added feature - get formatted nowtime
+  * Added feature - assign fimex xml file to stream
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Fri, 17 Jan 2014 10:55:57 +0100
+
+tseriesconfig (6.3.1-1) unstable; urgency=low
+
+  * reimplemented havdiagram that was somehow lost in the process
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Mon, 13 Jan 2014 10:39:35 +0100
+
+tseriesconfig (6.3.0-1) unstable; urgency=low
+
+  * new upstream version to support tseries-6.3
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Thu, 05 Dec 2013 12:44:39 +0100
+
+tseriesconfig (6.2.2-1) unstable; urgency=low
+
+  * made tseries.ctl vnn and vv compatible
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Tue, 19 Nov 2013 08:37:59 +0100
+
+tseriesconfig (6.2.1-2) unstable; urgency=low
+
+  * fixed eps_plum_rr style
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Tue, 12 Nov 2013 14:27:20 +0100
+
+tseriesconfig (6.2.1-1) unstable; urgency=low
+
+  * fixed eps_plum_rr style
+  * flattend structure
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Tue, 12 Nov 2013 14:16:01 +0100
+
+tseriesconfig (6.2.0-2) unstable; urgency=low
+
+  * fixed eps_plum_rr style
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Tue, 12 Nov 2013 14:13:32 +0100
+
+tseriesconfig (6.2.0-1) unstable; urgency=low
+
+  * first debianized version of tseriesconfig 
+
+ -- Juergen Schulze <juergen.schulze@met.no>  Sun, 09 Dec 2012 13:00:29 +0100
