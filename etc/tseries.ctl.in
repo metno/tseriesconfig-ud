@@ -10,6 +10,7 @@ Sysconfdir= @sysconfdir@
 HDFdatadir=/opdata/metcorr
 NCdatadir=/disk1/opdata_offline
 
+
 #------------------
 
 <Path>
@@ -101,7 +102,7 @@ InitialOpen=0
 
 # widcard example arome_norway_default2_5km_20??????_??.nc
 
-DataFile=$(NCdatadir)/DMH_wrf.nc
+DataFile=$(NCdatadir)/wrfout_d01_2013-06-25_00_00_00
 DataDescription=WRF
 DataType=netcdf : wrf
 Contents=x,x,WRF,x
