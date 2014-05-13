@@ -1,0 +1,20 @@
+Source: tseriesconfig
+Section: science
+Priority: extra
+Maintainer: Norwegian Meteorological Institute met.no <diana@met.no>
+Build-Depends: debhelper (>= 7.0.50), autotools-dev,
+ metno-devscripts (>= 0.3.2)
+Build-Conflicts: autoconf2.13, automake1.4
+Standards-Version: 3.8.4
+
+Package: tseriesconfig-6.4
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: catchcrash
+Provides: tseriesconfig
+Description: Tseries setup files
+ Setup files for the tseries meteorological
+ time series viewer. These setup files are tuned for the
+ environment at the Norwegian meteorological institute
+ If you are not working at met.no, you should consider
+ to create your own set of setup files...
