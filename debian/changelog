@@ -1,3 +1,9 @@
+tseriesconfig (6.6.0-1) precise; urgency=low
+
+  * tseries 6.6 support
+
+ -- Juergen Schulze <j.schulze@met.no>  Mon, 10 Nov 2014 10:11:10 +0100
+
 tseriesconfig (6.4.0-1) unstable; urgency=low
 
   * New version
