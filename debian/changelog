@@ -1,3 +1,9 @@
+tseriesconfig (6.6.0-1ubuntu1) precise; urgency=low
+
+  * version 6.6
+
+ -- Juergen Schulze <j.schulze@met.no>  Mon, 10 Nov 2014 10:00:09 +0100
+
 tseriesconfig (6.4.0-1) unstable; urgency=low
 
   * New version
