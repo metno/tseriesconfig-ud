@@ -75,15 +75,15 @@ newsURL=https://wiki.met.no/tseries/news
 
 # -------------------------------------------------
 
-CollectionName=ECMeteogrammer
-PreferredDiagram=Meteogram
-InitialOpen=0
+#CollectionName=ECMeteogrammer
+#PreferredDiagram=Meteogram
+#InitialOpen=0
 
 
-DataFile=$(HDFdatadir)/ecatmo_myanmar00.hdf
-DataDescription=ECMWF12
-DataType=HDF
-Contents=x,x,ECMWF,12
+#DataFile=$(HDFdatadir)/ecatmo_myanmar00.hdf
+#DataDescription=ECMWF12
+#DataType=HDF
+#Contents=x,x,ECMWF,12
 
 
 
@@ -107,13 +107,18 @@ InitialOpen=0
 # widcard example arome_norway_default2_5km_20??????_??.nc
 
 DataFile=$(NCdatadir)/$(datasrc)_atmos_20??????_??.nc
-DataDescription=ECNC
+DataDescription=ECATMO
 DataType=netcdf 
-Contents=x,x,ECNC,x
+Contents=x,x,ECATMO,x
+
+
+
+DataFile=$(NCdatadir)/$(datasrc)_wave_20??????_??.nc
+DataDescription=ECWAVE
+DataType=netcdf 
+Contents=x,x,ECWAVE,x
+
  
-
-
-
 <fimexParameters>
 # PETSPAR   = TYPE | fimexname                | Unit | extradim1 start1 len1 | extradim2 ...
 
@@ -121,21 +126,17 @@ MSLP,x,x,x = netcdf | air_pressure_at_sea_level         | hPa
 TT,x,x,x   = netcdf | air_temperature_2m                | Celsius
 UU,x,x,x   = netcdf | x_wind_10m                        | kt
 VV,x,x,x   = netcdf | y_wind_10m                        | kt
-FG,x,x,x   = netcdf | fog_area_fraction                 | 0.01
+#FG,x,x,x   = netcdf | fog_area_fraction                 | 0.01
 CL,x,x,x   = netcdf | low_type_cloud_area_fraction      | 0.01
 CM,x,x,x   = netcdf | medium_type_cloud_area_fraction   | 0.01
 CH,x,x,x   = netcdf | high_type_cloud_area_fraction     | 0.01
 RRAC,x,x,x = netcdf | precipitation_amount_acc          | kg/m^2
-# Postprocessed temperature - alias...
-#TTPP,x,x,x = netcdf | air_temperature_2m                | Celsius
 
-## Wrf data
+#WAVE
+HST,x,x,x  = netcdf | sea_surface_wave_significant_height       | m 
+HSP,x,x,x  = netcdf | significant_wind_wave_height              | m
+DDPP,x,x,x = netcdf | sea_surface_wind_wave_to_direction        | degree
+HSD,x,x,x  = netcdf | sea_surface_swell_wave_significant_height | m
+TSD,x,x,x  = netcdf | sea_surface_swell_wave_period             | s
 
-#MSLP,x,x,x = wrf | air_pressure_at_sea_level        | hPa     
-#UU,x,x,x   = wrf | U10                              | kt  | 
-#VV,x,x,x   = wrf | V10                              | kt  | 
-#FG,x,x,x   = wrf | CLDFRA                           | 0.01| bottom_top 0 1
-#CL,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 10 1
-#CM,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 15 1
-#CH,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 20 1
-#RRAC,x,x,x = wrf | RAINNC                           | mm
+
