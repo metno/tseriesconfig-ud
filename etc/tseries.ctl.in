@@ -21,6 +21,10 @@ Styles=$(Prefix)/share/tseries/@PVERSION@/style
 
 #------------------
 
+<klima>
+url=localhost
+
+
 <files>
 
 Defs=$(Styles)/tsDiagrams.def
