@@ -55,6 +55,13 @@ commonBookmarks=$(Etc)/tseries-bookmarks.common
 <fimex>
 FimexStreamTypes= netcdf 
 
+
+<wdb>
+host=10.0.0.5
+
+<klima>
+url=localhost
+
 <server>
 
 Client=Diana
