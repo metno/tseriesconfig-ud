@@ -6,17 +6,28 @@ prefix= @prefix@
 Sysconfdir= @sysconfdir@
 
 
+datasrc=bangladesh
+[MYANMAR]
+datasrc=myanmar
+[VIETNAM]
+datasrc=vietnam
+[]
+
+
 # put in Datadirectory here
 HDFdatadir=/opdata/metcorr
-NCdatadir=/disk1/opdata_offline
+NCdatadir=/mnt/data/ADPC/EC/data_$(datasrc)/nc4
+
+
+
 
 #------------------
 
 <Path>
 
 Etc= $(Sysconfdir)/tseries/@PVERSION@
-Images=$(Prefix)/share/pixmaps/tseries/@PVERSION@/
-Lang=$(Prefix)/share/tseries/@PVERSION@/lang
+Images=/usr/share/pixmaps/tseries/@PVERSION@/
+Lang=/usr/share/tseries/@PVERSION@/lang
 Styles=$(Prefix)/share/tseries/@PVERSION@/style
 
 #------------------
@@ -42,8 +53,7 @@ commonBookmarks=$(Etc)/tseries-bookmarks.common
 # run man date for formatting help
 
 <fimex>
-FimexStreamTypes= netcdf : ncml
-
+FimexStreamTypes= netcdf 
 
 <server>
 
@@ -75,11 +85,6 @@ DataDescription=ECMWF12
 DataType=HDF
 Contents=x,x,ECMWF,12
 
-DataFile=$(HDFdatadir)/ecatmo_myanmar12.hdf
-DataDescription=ECMWF00
-DataType=HDF
-Contents=x,x,ECMWF,00
-
 
 
 # ------------------------------------------------
@@ -101,10 +106,10 @@ InitialOpen=0
 
 # widcard example arome_norway_default2_5km_20??????_??.nc
 
-DataFile=$(NCdatadir)/2008.nc
-DataDescription=WRF
-DataType=netcdf : wrf
-Contents=x,x,WRF,x
+DataFile=$(NCdatadir)/$(datasrc)_atmos_20??????_??.nc
+DataDescription=ECNC
+DataType=netcdf 
+Contents=x,x,ECNC,x
  
 
 
@@ -122,16 +127,15 @@ CM,x,x,x   = netcdf | medium_type_cloud_area_fraction   | 0.01
 CH,x,x,x   = netcdf | high_type_cloud_area_fraction     | 0.01
 RRAC,x,x,x = netcdf | precipitation_amount_acc          | kg/m^2
 # Postprocessed temperature - alias...
-TTPP,x,x,x = netcdf | air_temperature_2m                | Celsius
+#TTPP,x,x,x = netcdf | air_temperature_2m                | Celsius
 
 ## Wrf data
 
-MSLP,x,x,x = wrf | air_pressure_at_sea_level        | hPa     
-TT,x,x,x   = wrf | T2                               | Celsius
-UU,x,x,x   = wrf | U10                              | kt  | 
-VV,x,x,x   = wrf | V10                              | kt  | 
-FG,x,x,x   = wrf | CLDFRA                           | 0.01| bottom_top 0 1
-CL,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 10 1
-CM,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 15 1
-CH,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 20 1
-RRAC,x,x,x = wrf | RAINNC                           | mm
+#MSLP,x,x,x = wrf | air_pressure_at_sea_level        | hPa     
+#UU,x,x,x   = wrf | U10                              | kt  | 
+#VV,x,x,x   = wrf | V10                              | kt  | 
+#FG,x,x,x   = wrf | CLDFRA                           | 0.01| bottom_top 0 1
+#CL,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 10 1
+#CM,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 15 1
+#CH,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 20 1
+#RRAC,x,x,x = wrf | RAINNC                           | mm

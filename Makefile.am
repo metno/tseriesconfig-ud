@@ -7,8 +7,7 @@ dist_etctseries_DATA = \
 	etc/tseries.ctl            \
 	etc/symbols.def		   \
 	etc/tseries.filter	   \
-	etc/tseries-bookmarks.common \
-	etc/tseries-bookmarks.VNN
+	etc/tseries-bookmarks.common 
 
 
 styledir        = $(datarootdir)/tseries/@PVERSION@/style

@@ -1,6 +1,6 @@
 [MODELS]
 ECMWF=Ecmwf
-WRF=WRF
+ECNC=ECNC
 
 # Standard meteogram
 [DIAGRAM]
@@ -134,7 +134,8 @@ NAME=Meteogram
 STYLEFILE=meteogram.style
 
 [LEGALMODELS]
-MODEL=WRF
+MODEL=ECNC
+
 
 
 
@@ -153,20 +154,8 @@ PARAM=CM,x,x,x
 PARAM=CH,x,x,x
 PARAM=CC,x,x,x
 PARAM=RRAC,x,x,x
-PARAM=TT_O,x,x,x
-PARAM=MSLP_O,x,x,x
-PARAM=QNH_O,x,x,x
-PARAM=DD_O,x,x,x
-PARAM=FF_O,x,x,x
-PARAM=RR_O,x,x,x
-PARAM=TAM,x,x,x
-PARAM=TAXM,x,x,x
-PARAM=TANM,x,x,x
 
 [ADD]
-
-
-
 
 # Standard meteogram fimex
 [FIMEX::DIAGRAM]
@@ -174,9 +163,7 @@ NAME=S-Meteogram
 STYLEFILE=meteogram.style
 
 [LEGALMODELS]
-MODEL=WRF
-
-
+MODEL=ECNC
 
 [MODELINDEPENDENT]
 PARAM=UU,x,x,x
@@ -193,16 +180,6 @@ PARAM=CM,x,x,x
 PARAM=CH,x,x,x
 PARAM=CC,x,x,x
 PARAM=RRAC,x,x,x
-PARAM=TT_O,x,x,x
-PARAM=MSLP_O,x,x,x
-PARAM=QNH_O,x,x,x
-PARAM=DD_O,x,x,x
-PARAM=FF_O,x,x,x
-PARAM=RR_O,x,x,x
-PARAM=TAM,x,x,x
-PARAM=TAXM,x,x,x
-PARAM=TANM,x,x,x
-PARAM=WW,x,x,x
 
 [ADD]
 
@@ -214,15 +191,11 @@ NAME=Acummprecip
 STYLEFILE=accumprecip.style
 
 [LEGALMODELS]
-MODEL=WRF
-
-
+MODEL=ECNC
 
 [MODELINDEPENDENT]
 PARAM=RRAC,x,x,x
-PARAM=RR_O,x,x,x
 PARAM=RR,x,x,x
 PARAM=TT,x,x,x
-PARAM=TT_O,x,x,x
 
 [ADD]
