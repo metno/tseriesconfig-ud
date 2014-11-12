@@ -156,8 +156,37 @@ PARAM=RRAC,x,x,x
 
 [ADD]
 
+# ------------------------------------
+
+# Standard meteogram fimex
+[FIMEX::DIAGRAM]
+NAME=Humidity Meteogram
+STYLEFILE=meteogram_humidity.style
+
+[LEGALMODELS]
+MODEL=ECATMO
 
 
+[MODELINDEPENDENT]
+PARAM=UU,x,x,x
+PARAM=VV,x,x,x
+PARAM=FF,x,x,x
+PARAM=DD,x,x,x
+PARAM=WVFD,x,x,x
+PARAM=TT,x,x,x
+PARAM=MSLP,x,x,x
+PARAM=RR,x,x,x
+PARAM=FG,x,x,x
+PARAM=CL,x,x,x
+PARAM=CM,x,x,x
+PARAM=CH,x,x,x
+PARAM=CC,x,x,x
+PARAM=RRAC,x,x,x
+PARAM=RH,x,x,x
+
+[ADD]
+
+#---------------------------------------------
 
 # Wavediagram
 [FIMEX::DIAGRAM]

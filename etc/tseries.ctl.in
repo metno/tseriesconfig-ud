@@ -139,13 +139,12 @@ CM,x,x,x   = netcdf | medium_type_cloud_area_fraction   | 0.01
 CH,x,x,x   = netcdf | high_type_cloud_area_fraction     | 0.01
 RRAC,x,x,x = netcdf | precipitation_amount_acc          | kg/m^2
 CC,x,x,x   = netcdf | cloud_area_fraction               | 0.01
-
-
+RH,x,x,x   = netcdf | relative_humidity_pl              | 1 | isobaric 14 1
 #WAVE
 HST,x,x,x  = netcdf | sea_surface_wave_significant_height       | m 
 HSP,x,x,x  = netcdf | significant_wind_wave_height              | m
 DDPP,x,x,x = netcdf | sea_surface_wind_wave_to_direction        | degree
 HSD,x,x,x  = netcdf | sea_surface_swell_wave_significant_height | m
-TSD,x,x,x  = netcdf | sea_surface_swell_wave_period             | s
+TSD,x,x,x  = netcdf | sea_surface_swell_wave_period             | s 
 
 

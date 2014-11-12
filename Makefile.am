@@ -36,6 +36,7 @@ dist_style_DATA = \
 	style/meteogram_batch.style	\
 	style/meteogram_ff.style	\
 	style/meteogram.style		\
+	style/meteogram_humidity.style  \
 	style/proff_combi.style		\
 	style/proff_edit.style		\
 	style/rrqgram.style		\
