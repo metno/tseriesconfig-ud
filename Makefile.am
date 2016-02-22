@@ -23,10 +23,15 @@ dist_style_DATA = \
 	style/eps_t2m.style		\
 	style/eps_z500.style		\
 	style/fxqgram.style		\
+	style/fimex_eps_t2m.style       \
+	style/fimex_eps_rr.style        \
+	style/fimex_eps_gust.style      \
+	style/fimex_eps_ff.style        \
 	style/glameps_ff.style		\
 	style/glameps_rr.style		\
 	style/glameps_t2m.style		\
 	style/glameps_z500.style	\
+	style/havdiagram.style          \
 	style/lameps_ff.style		\
 	style/lameps_plum_rr.style	\
 	style/lameps_rr.style		\

@@ -1,0 +1,484 @@
+# npl meteogram-style
+
+# global settings
+
+bgColor = WHITE
+topMargin = 50
+bottomMargin = 50
+leftMargin = 150
+rightMargin = 150
+
+# default values
+
+type  = DUM_PRIMITIVE
+parameter = x,x,x,x
+mother = DIAGRAM
+plotAll = false
+enabled=true
+
+color = RED
+#color2 = GREY95
+color2 = YELLOW
+font = NORMAL
+linePattern = FULL
+fillPattern = SOLID
+align = LEFT
+spacing = MEDIUM
+intSpacing = SMALL
+label = true
+patternInColour = false
+lineWidth = 1.0
+axisWidth = 2.0
+tickWidth = 1.0
+minRange = 0
+interval = 1
+delta = 2
+minMargin = 0
+maxIsSet = false
+minIsSet = false
+minValue = 100000
+maxValue = -100000
+yaid = 0
+centerVector = false
+numTickMajor = 10
+numTickMinor = 2
+#labelSpace = 150
+labelSpace = 120
+quantized=false
+quantum=1.0
+gridxonly=false
+axisgrid=false
+gridwidth=1
+gridcolor=GREY25
+gridstyle=DOTTED
+
+[DEFAULT]
+  
+# primitives start here
+
+[NEW]
+type=WIND_VECTOR
+order=1
+#alias=WVFD
+parameter=WVFD,x,x,x
+height=80
+color=BLACK
+color2=BLACK
+#color=DARK_GREEN
+#color2=DARK_GREEN
+label=true
+text=Wind
+font=HEADER3
+spacing=MEDIUM
+centerVector=false
+[ADD]
+
+[NEW]
+type=VECTOR
+order=2
+#alias=CUV
+parameter=CUV,x,x,x
+height=80
+color=BLACK
+color2=BLACK
+#color=DARK_GREEN
+#color2=DARK_GREEN
+label=true
+text=Current
+font=NORMAL
+spacing=MEDIUM
+centerVector=true
+[ADD]
+
+[NEW]
+type=VECTOR
+order=3
+alias=DDPD
+height=60
+color=BLUE
+color2=BLUE
+label=true
+text=Swell
+font=NORMAL
+spacing=MEDIUM
+centerVector=true
+[ADD]
+
+# date-line
+[NEW]
+type=DATE
+order=5
+height=25
+spacing=SMALL
+font=NORMAL
+color=BLUE
+[ADD]
+
+# day-line
+[NEW]
+type=DAY
+order=6
+height=25
+spacing=SMALL
+font=NORMAL
+color=BLUE
+[ADD]
+
+# prog-time
+[NEW]
+type=PROG
+enabled=FALSE
+order=7
+height=25
+spacing=SMALL
+font=NORMAL
+color=BLUE
+minSkipX=15
+[ADD]
+
+# utc-time
+[NEW]
+type=UTC
+order=8
+height=25
+spacing=SMALL
+font=NORMAL
+color=BLUE
+minSkipX=15
+[ADD]
+
+# x-axis primitive
+[NEW]
+type=XAXIS
+order=15
+color=BLACK
+color2=BLACK
+spacing=0
+[ADD]
+
+# inside axes primitives
+[NEW]
+mother=AXES1
+[DEFAULT]
+
+
+# Timemarkers
+[NEW]
+name=MARKEDTIME
+type=TIMEMARKER
+color=GREY50
+lineWidth=2
+linePattern=FULL
+patternInColour=TRUE
+[ADD]
+
+[NEW]
+name=DIANATIME
+type=TIMEMARKER
+color=RED
+lineWidth=2
+linePattern=DOTTED
+patternInColour=TRUE
+[ADD]
+
+
+
+# gridline
+[NEW]
+type=GRIDLINE
+color=GREY25
+lineWidth=1
+linePattern=DOTTED
+patternInColour=TRUE
+useTimes=3
+[ADD]
+
+
+
+
+
+# invisible axis to scale rr from different sources
+# Yaxis (RR24)
+[NEW]
+yaid=7
+type=YAXIS_STATIC
+minValue=0.0
+minIsSet=TRUE
+maxIsSet=FALSE
+visible=FALSE
+
+[ADD]
+
+
+
+
+
+
+
+
+# ----------------------------
+# Yaxis (HS)
+[NEW]
+type=YAXIS_STATIC
+yaid= 2
+delta= 0.05
+text = Height [m]
+axis = LEFTLEFT
+color=DARK_GREEN
+lineWidth=2
+linePattern=FULL
+patternInColour=TRUE
+[ADD]
+
+# line - primitive HS
+[NEW]
+type=LINE
+yaid=2
+parameter=HS,x,x,x
+component=0
+color=DARK_GREEN
+text=Sea level
+lineWidth=2
+linePattern=FULL
+patternInColour=FALSE
+[ADD]
+
+# line HS detided
+[NEW]
+type=LINE
+yaid=2
+parameter=HSDT,x,x,x
+color=DARK_GREEN
+text=Sea level detided
+lineWidth=1
+linePattern=FULL
+patternInColour=TRUE
+[ADD]
+
+# line HS detided raw
+
+[NEW]
+type=LINE
+yaid=2
+parameter=HSDR,x,x,x
+color=DARK_GREEN
+text=Sea level detided raw
+lineWidth=1
+linePattern=DOTTED
+patternInColour=TRUE
+[ADD]
+
+
+
+
+
+# ----------------------------
+# Yaxis (CFD)
+[NEW]
+type=YAXIS_STATIC
+yaid=3
+delta=0.05
+#interval=0.5
+#minMargin = 0.25
+#minRange = 20.0
+minValue=0.0
+minIsSet=TRUE
+#maxValue=360.0
+#maxIsSet=FALSE
+text =Speed [m/s]
+axis = RIGHTRIGHT
+color=RED
+#axisgrid=TRUE
+#numTickMajor = 12
+#numTickMinor = 2
+lineWidth=2
+linePattern=FULL
+patternInColour=TRUE
+[ADD]
+
+# line - primitive CFD (sea current strength)
+[NEW]
+type=LINE
+yaid=3
+#alias=CFD
+parameter=CFD,x,x,x
+component=0
+color=RED
+text=Current
+lineWidth=2
+linePattern=DASHED
+patternInColour=TRUE
+[ADD]
+
+# ----------------------------
+# Yaxis (HST)
+[NEW]
+type=YAXIS_STATIC
+yaid=4
+delta=1.0
+interval=0.5
+#minMargin = 0.25
+minRange = 2.0
+minValue=0.0
+minIsSet=TRUE
+maxValue=8
+#maxIsSet=FALSE
+text =Height [m]
+axis = LEFTLEFT
+color=RED
+#axisgrid=TRUE
+#numTickMajor = 12
+#numTickMinor = 2
+lineWidth=2
+linePattern=FULL
+patternInColour=TRUE
+[ADD]
+
+# line - primitive HST
+[NEW]
+type=LINE
+yaid=4
+parameter=HST,0,x,x
+component=0
+color=RED
+text=Total
+lineWidth=3
+linePattern=FULL
+patternInColour=FALSE
+[ADD]
+
+# ----------------------------
+# inside axes primitives
+[NEW]
+mother=DIAGRAM
+[DEFAULT]
+
+[NEW]
+type=STAT
+order=25
+height=40 # 30
+font=HEADER2
+align=CENTER
+text=#$
+drawbackground=FALSE
+color=RED
+[ADD]
+
+#==================================================================
+#
+# DIAGRAM - SST / SALINITY
+#
+#==================================================================
+
+[NEW]
+mother= DIAGRAM
+type=   XAXIS
+order=  10
+color=  BLACK
+color2= BLACK
+spacing=0
+height= 100
+[ADD]
+
+# ----------------------------
+# inside axes primitives
+
+[NEW]
+mother=       AXES2
+labelSpace=   0
+numTickMajor= 4
+numTickMinor= 1
+[DEFAULT]
+
+# ----------------------------
+# gridline
+
+
+[NEW]
+
+type=           GRIDLINE
+color=          GREY75
+lineWidth=      1
+linePattern=    DOTTED
+patternInColour=TRUE
+useTimes=       3
+
+[ADD]
+
+
+# ----------------------------
+# Timemarkers
+
+[NEW]
+type=           TIMEMARKER
+color=          GREY50
+lineWidth=      2
+linePattern=    FULL
+patternInColour=TRUE
+[ADD]
+
+
+
+# ----------------------------
+# Yaxis (SST)
+[NEW]
+type=     YAXIS_STATIC
+yaid=     10
+delta=     0.1
+interval=  0.1
+minMargin= 0.01
+minRange=  1
+text=      SST [°C]                          .
+align=     LEFT
+axis=      LEFTLEFT
+color=     RED
+lineWidth= 2
+
+[ADD]
+
+# line - primitive SST
+[NEW]
+type=LINE
+yaid=10
+component=      0
+parameter=SST,x,x,x
+lineWidth=2
+color=RED
+linePattern=FULL
+patternInColour=TRUE
+order=2
+[ADD]
+
+
+
+# Yaxis Salinity
+
+[NEW]
+type=       YAXIS_STATIC
+yaid=       11
+delta=      0.001
+interval=   0.001
+minMargin=  0.001
+minRange=   0.001
+minIsSet=   FALSE
+maxIsSet=   FALSE
+text =.             Salt [ppt]
+align=      LEFT
+axis=       RIGHTRIGHT
+color=      DARK_BLUE
+lineWidth=     2
+linePattern=     DOTTED
+patternInColour= TRUE
+[ADD]
+
+[NEW]
+type=            LINE
+component=       0
+yaid=            11
+parameter=       SAL,x,x,x
+color=           DARK_BLUE
+lineWidth=       2
+linePattern=     DOTTED
+patternInColour= TRUE
+order=2
+[ADD]

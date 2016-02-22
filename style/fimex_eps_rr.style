@@ -1,0 +1,281 @@
+#
+# Precipitation EPS diagram-style 
+# netCDF FIMEX interpolation
+#
+
+############################
+#                          #
+#    GLOBAL SETTINGS       #
+#                          #
+############################
+
+bgColor=      WHITE
+topMargin=    50
+bottomMargin= 5
+leftMargin=   160
+rightMargin=  160
+
+############################
+#                          #
+#   DEFAULT VALUES         #
+#                          #
+############################
+
+TYPE=         DUM_PRIMITIVE
+parameter=    x,x,x,x
+mother=       DIAGRAM
+plotAll=      FALSE
+enabled=      TRUE
+color=        RED
+color2=       YELLOW
+font=         NORMAL
+linePattern=  FULL
+fillPattern=  SOLID
+align=        LEFT
+spacing=      MEDIUM
+intSpacing=   SMALL
+label=        TRUE
+patternInColour= FALSE
+lineWidth=    1.0
+axisWidth=    2.0
+tickWidth=    1.0
+minRange=     0
+interval=     1
+delta=        2
+minMargin=    0
+maxIsSet=     FALSE
+minIsSet=     FALSE
+minValue=     100000
+maxValue=    -100000
+yaid=         0
+centerVector= FALSE
+numTickMajor= 10
+numTickMinor= 2
+labelSpace=   100
+quantized=    FALSE
+quantum=      1.0
+gridxonly=    FALSE
+axisgrid=     FALSE
+gridwidth=    1
+gridcolor=    GREY25
+gridstyle=    DOTTED
+
+[DEFAULT]
+
+
+############################
+#                          #
+#   PRIMITIVES             #
+#                          #
+############################ 
+
+[NEW]
+type=   TEXT
+order=  2
+height= 50
+font=   NORMAL
+align=  RIGHT
+color=  BLACK
+text=   © Meteorologisk Institutt
+[ADD]
+
+
+### DATE LINE #############
+
+[NEW]
+type=    DATE
+order=   5
+height=  25
+spacing= SMALL
+font=    NORMAL
+color=   BLUE
+[ADD]
+
+
+### DAY LINE ##############
+
+[NEW]
+type=    DAY
+order=   6
+height=  25
+spacing= SMALL
+font=    NORMAL
+color=   BLUE
+[ADD]
+
+### PROG TIME #############
+
+[NEW]
+type=    PROG
+enabled= FALSE
+order=   7
+height=  25
+spacing= SMALL
+font=    NORMAL
+color=   BLUE
+minSkipX=32
+[ADD]
+
+### UTC TIME ##############
+
+[NEW]
+type=    UTC
+order=   8
+height=  25
+spacing= SMALL
+font=    NORMAL
+color=   BLUE
+minSkipX=32
+[ADD]
+
+### X-AXIS ################
+
+[NEW]
+type=     XAXIS
+order=    15
+color=    BLACK
+color2=   BLACK
+spacing=  0
+rectangle=TRUE
+[ADD]
+
+
+[NEW]
+mother=AXES1
+[DEFAULT]
+
+### TIMEMARKER:NOW ########
+
+[NEW]
+name=            MARKEDTIME
+type=            TIMEMARKER
+color=           GREY50
+lineWidth=       2
+linePattern=     FULL
+patternInColour= TRUE
+[ADD]
+
+### TIMEMARKER:DIANA #####
+
+[NEW]
+name=            DIANATIME
+type=            TIMEMARKER
+color=           RED
+lineWidth=       2
+linePattern=     DOTTED
+patternInColour= TRUE
+[ADD]
+
+### GRIDLINE ##############
+
+[NEW]
+type=            GRIDLINE
+color=           GREY25
+lineWidth=       1
+linePattern=     DOTTED
+patternInColour= TRUE
+useTimes=        3
+[ADD]
+
+### Y-AXIS ( RR ) ##########
+
+[NEW]
+type=            YAXIS_STATIC
+yaid=            0
+horLabels=       TRUE
+horLabelOffset=  0
+delta=           1.0
+interval=        0.5
+minMargin=       0.25
+minRange=        5.0
+minIsSet=        TRUE
+minValue=        0.0
+maxIsSet=        FALSE
+text=            RR [mm]
+align=           LEFT
+axis=            LEFTLEFT
+color=           BLACK
+lineWidth=       2
+linePattern=     FULL
+patternInColour= TRUE
+fittopage=       TRUE
+[ADD]
+
+############################
+#                          #
+#   DATA                   #
+#                          #
+############################
+
+# EPS RR :  SMOKEPLUME
+
+[NEW]
+type=           MULTI_LINE
+yaid=           0
+order=          2
+parameter=      EPRR,x,x,x
+color=          GREY50
+#color=          GREY50
+text=           EPS
+lineWidth=      1
+linePattern=    FULL
+patternInColour=FALSE
+[ADD]
+
+# EPS CONTROL 
+ 
+parameter= CPRR,x,x,x
+order=     2
+text=      CTL
+color=     GREEN
+lineWidth= 3
+[ADD]
+
+
+# EPS RR : EPS 50. PERCENTIL (MEDIAN)
+ 
+parameter= EPRD,50,x,x
+order=     4
+text=      P50
+color=     BLACK
+lineWidth= 3
+[ADD]
+ 
+# EPS RR : EPS 10. PERCENTIL
+ 
+parameter= EPRD,10,x,x
+order=     4
+text=      P10
+color=     BROWN
+lineWidth= 3
+[ADD]
+ 
+# EPS RR : EPS 90. PERCENTIL
+ 
+parameter= EPRD,90,x,x
+order=     4
+text=      P90
+color=     BROWN
+lineWidth= 3
+ 
+[ADD]
+
+############################
+#                          #
+#   HEADER                 #
+#                          #
+############################ 
+
+[NEW]
+mother=DIAGRAM
+[DEFAULT]
+
+[NEW]
+type=STAT
+order=25
+height=30
+font=HEADER2
+align=CENTER
+color=DNMI_BLUE
+text=#$
+[ADD]

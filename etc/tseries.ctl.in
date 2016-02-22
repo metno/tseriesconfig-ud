@@ -5,12 +5,14 @@ Prefix= @prefix@
 prefix= @prefix@
 Sysconfdir= @sysconfdir@
 
+DisableWDB=True
 
 # put in Datadirectory here
 HDFdatadir=/opdata/metcorr
 NCdatadir=/mnt/data/ADPC/EC/data_myanmar/nc4
 GFSdatadir=/mnt/data/ADPC/GFS
-WRFdatadir=/mnt/data/ADPC/WRF
+GEFSdatadir=/mnt/data/ADPC/GEFS
+WRFdatadir=/mnt/data/ADPC/WRF_MY
 
 
 #------------------
@@ -24,10 +26,6 @@ Styles=$(Prefix)/share/tseries/@PVERSION@/style
 
 #------------------
 
-<klima>
-url=localhost
-
-
 <files>
 
 Defs=$(Styles)/tsDiagrams.def
@@ -39,7 +37,7 @@ newImage=$(Images)/ts_new_station.xpm
 iconImage=$(Prefix)/share/pixmaps/tseries.png
 activeImage=$(Images)/ts_active.xpm
 baseFilter=$(Etc)/tseries.filter
-wdbBookmarks=$(Home)/.tseries/bookmarks.wdb
+#wdbBookmarks=$(Home)/.tseries/bookmarks.wdb
 fimexBookmarks=$(Home)/.tseries/bookmarks.fimex
 commonBookmarks=$(Etc)/tseries-bookmarks.common
 
@@ -49,8 +47,14 @@ commonBookmarks=$(Etc)/tseries-bookmarks.common
 # run man date for formatting help
 
 <fimex>
-FimexStreamTypes= netcdf : ncml
+FimexStreamTypes= netcdf : ncml : grbml : felt
 
+
+<wdb>
+host=10.0.0.5
+
+<klima>
+url=localhost
 
 <server>
 
@@ -113,16 +117,37 @@ DataDescription=ECWAVE
 DataType=netcdf 
 Contents=x,x,ECWAVE,x
 
-DataFile=$(GFSdatadir)/gfs_0p25_20??????_??_6h.nc
+DataFile=$(GFSdatadir)/gfs_0p25_20??????_??.nc
 DataDescription=GFS
 DataType=netcdf 
 Contents=x,x,GFS,x
 #DataConfig=$(GFSdatadir)/gfs_vn.ncml
 
+# GEFS 1.0 degrees -----------------------------
+
+DataFile=$(GEFSdatadir)/GEFS_1p0/gefs_1p0_20??????_??.grbml
+DataConfig=$(GEFSdatadir)/GEFS_1p0/cdmGribReaderConfigGEFS.xml
+DataDescription=GEFS 1.0 deg
+DataType=grbml : EPS
+
+
+# GEFS 0.5 degrees -----------------------------
+
+DataFile=$(GEFSdatadir)/GEFS_0p5/gefs_0p5_20??????_??.grbml
+DataConfig=$(GEFSdatadir)/GEFS_0p5/cdmGribReaderConfigGEFS.xml
+DataDescription=GEFS 0.5 deg
+DataType=grbml : EPS
+
+# GEFS 0.5 degrees -----------------------------
+
+DataFile=$(GEFSdatadir)/gefs_0p5_20??????_??.grbml
+DataConfig=$(GEFSdatadir)/cdmGribReaderConfigGEFS.xml
+DataDescription=GEFS
+DataType=grbml : EPS
 
 DataFile=$(WRFdatadir)/wrf_cdo_train_20??-??-??_??.nc
 DataDescription=WRF
-DataType=netcdf : wrf
+DataType=netcdf
 Contents=x,x,WRF,x
 DataConfig=$(WRFdatadir)/wrf_cdo_ncap.ncml
 
@@ -141,20 +166,8 @@ CH,x,x,x   = netcdf | high_type_cloud_area_fraction     | 0.01
 RRAC,x,x,x = netcdf | precipitation_amount_acc          | kg/m^2
 CC,x,x,x   = netcdf | cloud_area_fraction               | 0.01
 RH,x,x,x   = netcdf | relative_humidity_pl              | 1 | isobaric 14 1
-# Postprocessed temperature - alias...
-TTPP,x,x,x = netcdf | air_temperature_2m                | Celsius
 
-## Wrf data
 
-MSLP,x,x,x = wrf | air_pressure_at_sea_level        | hPa     
-TT,x,x,x   = wrf | T2                               | Celsius
-UU,x,x,x   = wrf | U10                              | kt  | 
-VV,x,x,x   = wrf | V10                              | kt  | 
-FG,x,x,x   = wrf | CLDFRA                           | 0.01| bottom_top 0 1
-CL,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 10 1
-CM,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 15 1
-CH,x,x,x   = wrf | CLDFRA                           | 1   | bottom_top 20 1
-RRAC,x,x,x = wrf | RAINNC                           | mm
 
 #WAVE
 HST,x,x,x  = netcdf | sea_surface_wave_significant_height       | m 
@@ -163,4 +176,13 @@ DDPP,x,x,x = netcdf | sea_surface_wind_wave_to_direction        | degree
 HSD,x,x,x  = netcdf | sea_surface_swell_wave_significant_height | m
 TSD,x,x,x  = netcdf | sea_surface_swell_wave_period             | s 
 
+
+# EPS ----------------------------------------------------------------------------
+
+CTT,x,x,x = EPS | air_temperature_2m	      | Celsius | ensemble_member 0 1
+EPTT,x,x,x = EPS | air_temperature_2m	      | Celsius | ensemble_member 1 -1
+CPRR,x,x,x = EPS | precipitation_amount_acc_6h	 | kg/m^2 | ensemble_member 0 1
+EPRR,x,x,x = EPS | precipitation_amount_acc_6h   | kg/m^2 | ensemble_member 1 -1
+CPFF,x,x,x = EPS | wind_speed_of_gust	      | kt	| ensemble_member 0 1
+EPFF,x,x,x = EPS | wind_speed_of_gust	      | kt	| ensemble_member 1 -1
 
