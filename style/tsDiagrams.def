@@ -54,14 +54,16 @@ PARAM=TANM,x,x,x
 
 [ADD]
 
-
-# Standard meteogram med vaer
+# Standard meteogram fimex
 [FIMEX::DIAGRAM]
 NAME=S-Meteogram
 STYLEFILE=meteogram.style
 
 [LEGALMODELS]
 MODEL=ECATMO
+MODEL=GFS
+MODEL=WRF
+
 
 [MODELINDEPENDENT]
 PARAM=UU,x,x,x
@@ -71,14 +73,6 @@ PARAM=DD,x,x,x
 PARAM=WVFD,x,x,x
 PARAM=TT,x,x,x
 PARAM=MSLP,x,x,x
-PARAM=RR1,x,x,x
-PARAM=RR2,x,x,x
-PARAM=SNPR,x,x,x
-PARAM=RAPR,x,x,x
-PARAM=COSN,x,x,x
-PARAM=CORA,x,x,x
-PARAM=STSN,x,x,x
-PARAM=STRA,x,x,x
 PARAM=RR,x,x,x
 PARAM=FG,x,x,x
 PARAM=CL,x,x,x
@@ -86,68 +80,8 @@ PARAM=CM,x,x,x
 PARAM=CH,x,x,x
 PARAM=CC,x,x,x
 PARAM=RRAC,x,x,x
-PARAM=RH,x,x,x
 PARAM=WW,x,x,x
-
 [ADD]
-
-
-# Wavediagram --------------------------------
-
-[FIMEX::DIAGRAM]
-NAME=Wavediagram
-STYLEFILE=meteogram.style
-
-[LEGALMODELS]
-MODEL=ECWAVE
-
-
-[MODELSPECIFIC]
-MODEL=ECATMO
-PARAM=UU,x,x,x
-PARAM=VV,x,x,x
-PARAM=FF,x,x,x
-PARAM=DD,x,x,x
-PARAM=WVFD,x,x,x
-
-[END]
-
-
-[MODELINDEPENDENT]
-PARAM=FF,x,x,x
-PARAM=DD,x,x,x
-PARAM=WVFD,x,x,x
-PARAM=HST,x,x,x
-PARAM=TST,x,x,x
-PARAM=HSD,x,x,x
-PARAM=TSD,x,x,x
-PARAM=HSP,x,x,x
-PARAM=TSP,x,x,x
-PARAM=DDPD,x,x,x
-PARAM=DDPP,x,x,x
-
-[ADD]
-
-
-
-# Standard accumlated precipitation ---------
-
-[FIMEX::DIAGRAM]
-NAME=Acummprecip
-STYLEFILE=accumprecip.style
-
-[LEGALMODELS]
-MODEL=ECATMO
-MODEL=GFS
-MODEL=WRF
-
-[MODELINDEPENDENT]
-PARAM=RRAC,x,x,x
-PARAM=RR,x,x,x
-PARAM=TT,x,x,x
-
-[ADD]
-
 
 
 # Standard meteogram med FF -----------------
@@ -191,186 +125,24 @@ PARAM=TANM,x,x,x
 
 
 
-######################
-#                    #
-#                    #
-#    F I M E X       #
-#                    #
-#                    #
-######################
-	
 
-# Standard meteogram fimex
+# Standard accumlated precipitation ---------
+
 [FIMEX::DIAGRAM]
-NAME=Meteogram
-STYLEFILE=meteogram.style
+NAME=Acummprecip
+STYLEFILE=accumprecip.style
 
 [LEGALMODELS]
 MODEL=ECATMO
 MODEL=GFS
 MODEL=WRF
 
-
-
-[MODELINDEPENDENT]
-PARAM=UU,x,x,x
-PARAM=VV,x,x,x
-PARAM=FF,x,x,x
-PARAM=DD,x,x,x
-PARAM=WVFD,x,x,x
-PARAM=TT,x,x,x
-PARAM=MSLP,x,x,x
-PARAM=RR,x,x,x
-PARAM=FG,x,x,x
-PARAM=CL,x,x,x
-PARAM=CM,x,x,x
-PARAM=CH,x,x,x
-PARAM=CC,x,x,x
-PARAM=RRAC,x,x,x
-PARAM=WW,x,x,x
-PARAM=TT_O,x,x,x
-PARAM=MSLP_O,x,x,x
-PARAM=QNH_O,x,x,x
-PARAM=DD_O,x,x,x
-PARAM=FF_O,x,x,x
-PARAM=RR_O,x,x,x
-PARAM=TAM,x,x,x
-PARAM=TAXM,x,x,x
-PARAM=TANM,x,x,x
-
-[ADD]
-
-
-
-
-# Standard meteogram fimex
-[FIMEX::DIAGRAM]
-NAME=S-Meteogram
-STYLEFILE=meteogram.style
-
-[LEGALMODELS]
-MODEL=WRF
-MODEL=ECMWF
-
-
-[MODELINDEPENDENT]
-PARAM=UU,x,x,x
-PARAM=VV,x,x,x
-PARAM=FF,x,x,x
-PARAM=DD,x,x,x
-PARAM=WVFD,x,x,x
-PARAM=TT,x,x,x
-PARAM=TT_U,x,x,x
-PARAM=MSLP,x,x,x
-PARAM=RR1,x,x,x
-PARAM=RR2,x,x,x
-PARAM=SNPR,x,x,x
-PARAM=RAPR,x,x,x
-PARAM=COSN,x,x,x
-PARAM=CORA,x,x,x
-PARAM=STSN,x,x,x
-PARAM=STRA,x,x,x
-PARAM=RR,x,x,x
-PARAM=FG,x,x,x
-PARAM=CL,x,x,x
-PARAM=CM,x,x,x
-PARAM=CH,x,x,x
-PARAM=CC,x,x,x
-PARAM=RRAC,x,x,x
-PARAM=TT_O,x,x,x
-PARAM=MSLP_O,x,x,x
-PARAM=QNH_O,x,x,x
-PARAM=DD_O,x,x,x
-PARAM=FF_O,x,x,x
-PARAM=RR_O,x,x,x
-PARAM=TAM,x,x,x
-PARAM=TAXM,x,x,x
-PARAM=TANM,x,x,x
-PARAM=WW,x,x,x
-
-[ADD]
-
-
-
-# Standard accumlated precipitation
-[FIMEX::DIAGRAM]
-NAME=Acummprecip
-STYLEFILE=accumprecip.style
-
-[LEGALMODELS]
-MODEL=WRF
-
-
-
 [MODELINDEPENDENT]
 PARAM=RRAC,x,x,x
-PARAM=RR_O,x,x,x
 PARAM=RR,x,x,x
 PARAM=TT,x,x,x
-PARAM=TT_O,x,x,x
 
 [ADD]
-
-
-# Havdiagram
-[FIMEX::DIAGRAM]
-NAME=Havdiagram
-STYLEFILE=havdiagram.style
-
-[LEGALMODELS]
-MODEL=Nordic-4km
-MODEL=NorKyst-800m
-MODEL=Arctic-20km
-
-[MODELSPECIFIC]
-MODEL=Nordic-4Km-stormsurge
-PARAM=HSDT,x,x,x
-PARAM=HSDR,x,x,x
-[END]
-
-[MODELINDEPENDENT]
-PARAM=HS,x,x,x
-PARAM=CUV,x,x,x
-PARAM=CU,x,x,x
-PARAM=CV,x,x,x
-PARAM=CFD,x,x,x
-PARAM=SST,x,x,x
-PARAM=SAL,x,x,x
-
-[END]
-
-[ADD]
-
-
-
-# Boelgediagram
-[FIMEX::DIAGRAM]
-NAME=Bølgediagram
-STYLEFILE=meteogram.style
-
-[LEGALMODELS]
-MODEL=MYWAVE-WAM4
-MODEL=ECWAM
-
-
-[MODELINDEPENDENT]
-PARAM=FF,x,x,x
-PARAM=DD,x,x,x
-PARAM=WVFD,x,x,x
-PARAM=HST,x,x,x
-PARAM=TST,x,x,x
-PARAM=HSD,x,x,x
-PARAM=TSD,x,x,x
-PARAM=HSP,x,x,x
-PARAM=TSP,x,x,x
-PARAM=DDPD,x,x,x
-PARAM=DDPP,x,x,x
-
-[END]
-[ADD]
-
-
-
 
 ###############################
 #
@@ -386,7 +158,6 @@ STYLEFILE=fimex_eps_t2m.style
 
 [LEGALMODELS]
 MODEL=GEFS 0.5 deg
-MODEL=GEFS 1.0 deg
 MODEL=OBS
  
 [MODELINDEPENDENT]
@@ -410,7 +181,6 @@ STYLEFILE=fimex_eps_rr.style
 [LEGALMODELS]
 #MODEL=ECEPS 0.5 deg < removed due to funny start values
 MODEL=GEFS 0.5 deg
-MODEL=GEFS 1.0 deg
  
 [MODELINDEPENDENT]
 PARAM=CPRR,x,x,x
@@ -436,9 +206,45 @@ PARAM=EPFF,x,x,x
 PARAM=EPFD,x,x,x
 
 [END]
-
- 
  
 [ADD]
+
+
+# Wavediagram --------------------------------
+
+[FIMEX::DIAGRAM]
+NAME=Wavediagram
+STYLEFILE=meteogram.style
+
+[LEGALMODELS]
+MODEL=ECWAVE
+
+
+[MODELSPECIFIC]
+MODEL=ECATMO
+PARAM=UU,x,x,x
+PARAM=VV,x,x,x
+PARAM=FF,x,x,x
+PARAM=DD,x,x,x
+PARAM=WVFD,x,x,x
+
+[END]
+
+
+[MODELINDEPENDENT]
+PARAM=FF,x,x,x
+PARAM=DD,x,x,x
+PARAM=WVFD,x,x,x
+PARAM=HST,x,x,x
+PARAM=TST,x,x,x
+PARAM=HSD,x,x,x
+PARAM=TSD,x,x,x
+PARAM=HSP,x,x,x
+PARAM=TSP,x,x,x
+PARAM=DDPD,x,x,x
+PARAM=DDPP,x,x,x
+
+[ADD]
+
 
 

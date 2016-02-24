@@ -117,11 +117,11 @@ DataDescription=ECWAVE
 DataType=netcdf 
 Contents=x,x,ECWAVE,x
 
-DataFile=$(GFSdatadir)/gfs_0p25_20??????_??.nc
+DataFile=$(GFSdatadir)/gfs_0p25_20??????_??.grbml
+DataConfig=$(GFSdatadir)/cdmGribReaderConfigGFS.xml
 DataDescription=GFS
-DataType=netcdf 
+DataType=grbml : netcdf
 Contents=x,x,GFS,x
-#DataConfig=$(GFSdatadir)/gfs_vn.ncml
 
 # GEFS 1.0 degrees -----------------------------
 
