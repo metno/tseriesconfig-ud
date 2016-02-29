@@ -112,38 +112,38 @@ DataDescription=ECATMO
 DataType=netcdf 
 Contents=x,x,ECATMO,x
 
-DataFile=$(NCdatadir)/vietnam_wave_20??????_??.nc
+DataFile=$(NCdatadir)/myanmar_wave_20??????_??.nc
 DataDescription=ECWAVE
 DataType=netcdf 
 Contents=x,x,ECWAVE,x
 
-DataFile=$(GFSdatadir)/gfs_0p25_20??????_??.grbml
-DataConfig=$(GFSdatadir)/cdmGribReaderConfigGFS.xml
+DataFile=$(GFSdatadir)/gfs_0p25_20??????_??.nc
 DataDescription=GFS
-DataType=grbml : netcdf
+DataType=netcdf 
 Contents=x,x,GFS,x
+#DataConfig=$(GFSdatadir)/gfs_vn.ncml
 
 # GEFS 1.0 degrees -----------------------------
 
-DataFile=$(GEFSdatadir)/GEFS_1p0/gefs_1p0_20??????_??.grbml
-DataConfig=$(GEFSdatadir)/GEFS_1p0/cdmGribReaderConfigGEFS.xml
+DataFile=$(GEFSdatadir)/GEFS_1p0/gefs_1p0_20??????_??.nc
+#DataConfig=$(GEFSdatadir)/GEFS_1p0/cdmGribReaderConfigGEFS.xml
 DataDescription=GEFS 1.0 deg
-DataType=grbml : EPS
+DataType=netcdf : EPS
 
 
 # GEFS 0.5 degrees -----------------------------
 
-DataFile=$(GEFSdatadir)/GEFS_0p5/gefs_0p5_20??????_??.grbml
-DataConfig=$(GEFSdatadir)/GEFS_0p5/cdmGribReaderConfigGEFS.xml
+DataFile=$(GEFSdatadir)/GEFS_0p5/gefs_0p5_20??????_??.nc
+#DataConfig=$(GEFSdatadir)/GEFS_0p5/cdmGribReaderConfigGEFS.xml
 DataDescription=GEFS 0.5 deg
-DataType=grbml : EPS
+DataType=netcdf : EPS
 
 # GEFS 0.5 degrees -----------------------------
 
-DataFile=$(GEFSdatadir)/gefs_0p5_20??????_??.grbml
-DataConfig=$(GEFSdatadir)/cdmGribReaderConfigGEFS.xml
+DataFile=$(GEFSdatadir)/gefs_0p5_20??????_??.nc
+#DataConfig=$(GEFSdatadir)/cdmGribReaderConfigGEFS.xml
 DataDescription=GEFS
-DataType=grbml : EPS
+DataType=netcdf : EPS
 
 DataFile=$(WRFdatadir)/wrf_cdo_train_20??-??-??_??.nc
 DataDescription=WRF
