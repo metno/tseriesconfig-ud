@@ -1,0 +1,17 @@
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/
+config.log
+config.status
+configure
+debian/debhelper-build-stamp
+debian/files
+debian/tseriesconfig-myanmar.debhelper.log
+debian/tseriesconfig-myanmar.substvars
+debian/tseriesconfig-myanmar/
+etc/tseries.ctl
+install-sh
+missing
+share/metno-tseries.desktop
+
