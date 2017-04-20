@@ -2,7 +2,7 @@
 Name=Tseries-@PVERSION@
 GenericName=Tseries-@PVERSION@
 Comment=Timeseries visualization
-Exec=tseries.bin-@PVERSION@
+Exec=env LC_NUMERIC=C /usr/bin/tseries.bin-@PVERSION@
 Icon=tseries-@PVERSION@
 MimeType=;
 ServiceTypes=
