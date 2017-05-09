@@ -1,10 +1,15 @@
 Tseries setup for the BMD by usning ansible:
 
 
+##########################################################
+# Online Dokumentation:
 
+  http://docs.ansible.com/ansible/modules_by_category.html
 
 ###########################################################
-Prerequisite
+
+PREREQUISITE
+
 hostkey checking kan lead into trouble when the hostnames change
 or you never been on the box before make your life easy by
 
