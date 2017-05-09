@@ -12,6 +12,17 @@
       raw: dpkg -l | grep python-apt || apt-get install python-apt
 
   tasks:
+    - name: Creating directories
+      file:
+        path: "{{ item }}"
+        state: directory
+      with_items:
+        - "/etc/tseries/{{tseries_version}}"
+        - "/usr/share/tseries/{{tseries_version}}/style"
+        - "/usr/share/pixmaps/tseries/{{tseries_version}}"
+        - "/usr/share/applications"
+      tags: dir
+    
     - name: Copy Tseries etc files
       copy:
         src: "{{ item }}"
