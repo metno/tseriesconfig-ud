@@ -1,0 +1,47 @@
+# Generic task to install mapp software
+
+---
+- name: INSTALL setup-files
+  hosts: all
+  gather_facts: no
+  become: true
+  become_method: sudo
+  tasks:        
+
+    - name: Install Python-apt
+      raw: dpkg -l | grep python-apt || apt-get install python-apt
+
+  tasks:
+    - name: Copy Tseries etc files
+      copy:
+        src: "{{ item }}"
+        dest: "/etc/tseries/{{tseries_version}}"
+      with_fileglob:
+        - "files/etc/*"
+      tags: etc
+      
+    - name: Copy Tseries style files
+      copy:
+        src: "{{ item }}"
+        dest: "/usr/share/tseries/{{tseries_version}}/style/"
+      with_fileglob:
+        - "files/style/*"
+      tags: style
+        
+    - name: Copy Tseries Pixmaps
+      copy:
+        src: "{{ item }}"
+        dest: "/usr/share/pixmaps/tseries/{{tseries_version}}/"
+      with_fileglob:
+        - "files/pixmaps/*"
+      tags: pixmaps
+        
+    - name: Copy Tseries launcher
+      copy:
+        src: "files/tseries.desktop"
+        dest: "/usr/share/applications/tseries.desktop"
+      tags: launcher
+
+
+
+        
