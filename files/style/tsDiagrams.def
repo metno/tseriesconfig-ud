@@ -1,0 +1,91 @@
+[MODELS]
+ECMWF=ECMWF
+
+
+######################
+#                    #
+#                    #
+#    F I M E X       #
+#                    #
+#                    #
+######################
+	
+
+# Standard meteogram fimex
+[FIMEX::DIAGRAM]
+NAME=Meteogram
+STYLEFILE=meteogram.style
+
+[LEGALMODELS]
+MODEL=ECMWF
+
+[MODELINDEPENDENT]
+PARAM=UU,x,x,x
+PARAM=VV,x,x,x
+PARAM=FF,x,x,x
+PARAM=DD,x,x,x
+PARAM=WVFD,x,x,x
+PARAM=TT,x,x,x
+PARAM=MSLP,x,x,x
+PARAM=RR,x,x,x
+PARAM=FG,x,x,x
+PARAM=CL,x,x,x
+PARAM=CM,x,x,x
+PARAM=CH,x,x,x
+PARAM=CC,x,x,x
+PARAM=RRAC,x,x,x
+[END]
+[ADD]
+
+
+# Standard meteogram fimex
+[FIMEX::DIAGRAM]
+NAME=S-Meteogram
+STYLEFILE=meteogram.style
+
+[LEGALMODELS]
+MODEL=ECMWF
+
+[MODELINDEPENDENT]
+PARAM=UU,x,x,x
+PARAM=VV,x,x,x
+PARAM=FF,x,x,x
+PARAM=DD,x,x,x
+PARAM=WVFD,x,x,x
+PARAM=TT,x,x,x
+PARAM=MSLP,x,x,x
+PARAM=RR,x,x,x
+PARAM=FG,x,x,x
+PARAM=CL,x,x,x
+PARAM=CM,x,x,x
+PARAM=CH,x,x,x
+PARAM=CC,x,x,x
+PARAM=RRAC,x,x,x
+PARAM=WW,x,x,x
+
+[END]
+[ADD]
+
+
+
+# Standard accumlated precipitation
+[FIMEX::DIAGRAM]
+NAME=Acummprecip
+STYLEFILE=accumprecip.style
+
+[LEGALMODELS]
+MODEL=ECMWF
+
+
+[MODELINDEPENDENT]
+PARAM=RRAC,x,x,x
+PARAM=RR,x,x,x
+PARAM=TT,x,x,x
+
+[END]
+[ADD]
+
+
+
+
+

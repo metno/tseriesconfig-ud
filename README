@@ -1,32 +1,117 @@
-Tseries config files for export
-
-to build the config files manually (for development purposes)
-
-run
-
-./autogen.sh
-./configure --prefix=[your target directory]
-make install
-
-
-after that - run tseries.bin -s [your target directory]/tseries/[version number]/tseries.ctl
+Tseries setup for the BMD by usning ansible:
 
 
 
-To install the config files properly:
 
-run
+###########################################################
+Prerequisite
+hostkey checking kan lead into trouble when the hostnames change
+or you never been on the box before make your life easy by
 
-debuild -us -uc -b
+export ANSIBLE_HOST_KEY_CHECKING=False
 
-it will generate a debian package in ../
-
-install it with dpkg -i [debian_package]
+in your .bashrc
 
 
-You have to adapt your version number to the version number of tseries
-change the package number in configure.ac (AC_INIT) to fit the tseries version
-remember to adapt the changelog as well (with the proper version number)
+
+Because of some unsigned packages in our local repository, you need
+an option given in a newer version of ansible than the one provided
+by xenial - therefore install ansible by:
+
+> pip3 install ansible
+
+If you start from scratch - you need to install pip first 
+
+> sudo apt-get install python3-pip
+
+############################################################
+#
+# ADDING MACHINES
+#
+# edit the file hosts and add the ip-adress (or dns name)
+#
+
+[all]
+mymachine
+157.249.13.0                     # you can add a comment as well
+yourmachine tseries_version=7.1  # You can set variables as well
+
+
+
+###########################################################
+#
+# ADDING VARIABLES
+#
+# The version of tseries is given in the group_vars/all.yml file.
+# You can make new groups and add variables to whole groups
+#
+# example:
+#
+
+[fruits]           # new group fruits
+apple              # new machine apple 
+banana             # new machine banana  
+
+
+#
+#  copy group_vars/all.yml to group_vars/fruits.yml
+#  and change the version to 7.1, now fruits would get the variable 7.1 for tseries_version
+
+
+
+###########################################################
+#
+# FLAGS
+#
+# you need ssh and sudo rights on your target machines
+# the program to run the scripts is called ansible-playbook
+# to check out all options - run
+
+ansible-playbook -h
+
+
+# But some usefull flags for this plays
+
+-C  Dry run - just check - dont do it...
+-K  Sudo password (you need this on all our machines to become sudo)
+-k  connection password (in case you dont have your key there yet)
+-i  inventory to use (host file)
+-l  SUBSET ( like -l fruits just run on fruits-subset)
+-l  machinename ( like -l apple just pick one box)
+-t  tags (just run the tag with the name - defined=etc/style/launcher/pixmaps)
+
+##########################################################
+#
+# RUNNING THE PLAYBOOK
+#
+
+# Normal run - all machines
+
+  ansible-playbook -K -k -i hosts install.yml
+
+# Run on a group (just fruits)
+
+  ansible-playbook -K -k -i hosts -l fruits install.yml
+
+# Run on one machine
+
+  ansible-playbook -K -k -i hosts -l apple install.yml
+
+# Run for a given task (her just copy the etc files)
+
+  ansible-playbook -K -k -i hosts -t etc install.yml
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Tseries-7.0
+GenericName=Tseries-7.0
+Comment=Tidsserie visning
+Exec=tseries-7.0
+Icon=tseries-7.0
+MimeType=;
+ServiceTypes=
+Terminal=false
+Type=Application
+Categories=Science;Meteorologisk;Meteorologisk-VersionedPrograms
