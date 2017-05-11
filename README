@@ -90,22 +90,32 @@ ansible-playbook -h
 # RUNNING THE PLAYBOOK
 #
 
+There are two playbooks available, one for the setup files and one, running
+apt-get from launchpad
+
+install_setup.yml
+install_tseries.yml
+
+
 # Normal run - all machines
 
-  ansible-playbook -K -k -i hosts install.yml
+  ansible-playbook -K -k -i hosts install_setup.yml
+  ansible-playbook -K -k -i hosts install_tseries.yml
 
 # Run on a group (just fruits)
 
-  ansible-playbook -K -k -i hosts -l fruits install.yml
+  ansible-playbook -K -k -i hosts -l fruits install_setup.yml
+  ansible-playbook -K -k -i hosts -l fruits install_tseries.yml	
 
 # Run on one machine
 
-  ansible-playbook -K -k -i hosts -l apple install.yml
+  ansible-playbook -K -k -i hosts -l apple install_setup.yml
+  ansible-playbook -K -k -i hosts -l apple install_tseries.yml
 
 # Run for a given task (her just copy the etc files)
 
-  ansible-playbook -K -k -i hosts -t etc install.yml
-
+  ansible-playbook -K -k -i hosts -t etc install_setup.yml
+  ansible-playbook -K -k -i hosts -t etc install_tseries.yml	
 
 
 
