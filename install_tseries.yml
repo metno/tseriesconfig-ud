@@ -1,0 +1,39 @@
+# Generic task to install mapp software
+
+---
+- name: INSTALL PACKAGE BASED PROGRAMS FROM LAUNCHPAD
+  hosts: all
+  gather_facts: no
+  become: true
+  become_method: sudo
+  tasks:        
+
+    - name: Install Python-apt
+      raw: dpkg -l | grep python-apt || apt-get install python-apt
+
+- name: LAUNCHPAD REPO TO THE SOURCE LIST
+  hosts: all
+  gather_facts: no
+  become: true
+  become_method: sudo
+
+
+  tasks:
+    - name: Add launchpad to the client
+      apt_repository:
+        repo: 'deb ppa:met-norway/metapps'
+        state: present
+
+    - name: Updating cache
+      apt:
+        update_cache: yes
+        autoremove: yes
+        state: latest
+ 
+    - name: Installing Tseries 
+      apt:
+        name: "tseries-7.1"
+        state: latest
+
+
+        
