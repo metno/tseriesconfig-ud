@@ -6,6 +6,7 @@ Data=${HOME}/opdata
 
 #------------------
 
+
 <Path>
 
 Etc= /etc/tseries/7.0
@@ -72,7 +73,7 @@ InitialOpen=0
 
 
 # ECMWF  NetCDF	 
-DataFile=$(Data)/ec_atmos_[yyyymmdd_HH].nc
+DataFile=$(Data)/ec/ec_atmos_[yyyymmdd_HH].nc
 DataDescription=ECMWF
 DataType= netcdf 
  

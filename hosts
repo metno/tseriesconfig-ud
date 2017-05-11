@@ -1,4 +1,8 @@
 [all]
-10.99.3.215 ansible_user=ubuntu
+192.168.0.108 ansible_user=ctgmmo ansible_become_pass=ctg123 ansible_ssh_pass=ctg123 
 
-
+[training]
+192.168.0.240 ansible_user=training26  
+192.168.0.242 ansible_user=training08 
+192.168.0.229 ansible_user=training15
+192.168.0.237 ansible_user=training18

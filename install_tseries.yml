@@ -19,21 +19,20 @@
 
 
   tasks:
-    - name: Add launchpad to the client
+    - name: Add metapps launchpad to the client
       apt_repository:
-        repo: 'deb ppa:met-norway/metapps'
+        repo: 'ppa:met-norway/metapps'
         state: present
 
-    - name: Updating cache
-      apt:
-        update_cache: yes
-        autoremove: yes
-        state: latest
- 
+    - name: Add fimex launchpad to the client
+      apt_repository:
+        repo: 'ppa:met-norway/fimex'
+        state: present
+
     - name: Installing Tseries 
       apt:
         name: "tseries-7.1"
         state: latest
-
+        update_cache: yes
 
         
