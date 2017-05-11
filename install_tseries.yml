@@ -35,5 +35,14 @@
         name: "tseries-7.1"
         state: latest
 
+    - name: Installing tseries-script
+      copy:
+        src: "files/bin/tseries"
+        dest: "/usr/bin/tseries"
+        mode: "a+x"
 
-        
+    - name: Copy Tseries launcher
+      copy:
+        src: "files/tseries.desktop"
+        dest: "/usr/share/applications/tseries.desktop"
+      tags: launcher

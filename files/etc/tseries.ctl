@@ -8,10 +8,10 @@ Data=${HOME}/opdata
 
 <Path>
 
-Etc= /etc/tseries/7.0
-Images=/usr/share/pixmaps/tseries/7.0/
-Lang=/usr/share/tseries/7.0/lang
-Styles=/usr/share/tseries/7.0/style
+Etc= /etc/tseries
+Images=/usr/share/pixmaps/tseries
+Lang=/usr/share/tseries/lang
+Styles=/usr/share/tseries/style
 Local=$(Home)/.tseries
 
 #------------------
@@ -24,7 +24,7 @@ Defs=$(Styles)/tsDiagrams.def
 commonBookmarks=$(Etc)/tseries-bookmarks.common
 
 
-Configure=$(Local)/tseries-7.0.conf
+Configure=$(Local)/tseries.conf
 fimexBookmarks=$(Local)/bookmarks.fimex
 
 WeatherSymbols=$(Etc)/symbols.def

@@ -17,16 +17,16 @@
         path: "{{ item }}"
         state: directory
       with_items:
-        - "/etc/tseries/{{tseries_version}}"
-        - "/usr/share/tseries/{{tseries_version}}/style"
-        - "/usr/share/pixmaps/tseries/{{tseries_version}}"
+        - "/etc/tseries"
+        - "/usr/share/tseries/style"
+        - "/usr/share/pixmaps/tseries"
         - "/usr/share/applications"
       tags: dir
     
     - name: Copy Tseries etc files
       copy:
         src: "{{ item }}"
-        dest: "/etc/tseries/{{tseries_version}}"
+        dest: "/etc/tseries/"
       with_fileglob:
         - "files/etc/*"
       tags: etc
@@ -34,7 +34,7 @@
     - name: Copy Tseries style files
       copy:
         src: "{{ item }}"
-        dest: "/usr/share/tseries/{{tseries_version}}/style/"
+        dest: "/usr/share/tseries/style/"
       with_fileglob:
         - "files/style/*"
       tags: style
@@ -42,17 +42,10 @@
     - name: Copy Tseries Pixmaps
       copy:
         src: "{{ item }}"
-        dest: "/usr/share/pixmaps/tseries/{{tseries_version}}/"
+        dest: "/usr/share/pixmaps/tseries/"
       with_fileglob:
         - "files/pixmaps/*"
       tags: pixmaps
-        
-    - name: Copy Tseries launcher
-      copy:
-        src: "files/tseries.desktop"
-        dest: "/usr/share/applications/tseries.desktop"
-      tags: launcher
-
 
 
         
