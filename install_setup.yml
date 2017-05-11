@@ -47,5 +47,20 @@
         - "files/pixmaps/*"
       tags: pixmaps
 
+    - name: Copy Tseries Logo
+      copy:
+        src: "files/pixmaps/tseries.png"
+        dest: "/usr/share/pixmaps/"
+
+
+
+
+
+
+
+
+
+
+
 
         

@@ -1,5 +1,5 @@
-[all]
-192.168.0.108 ansible_user=ctgmmo ansible_become_pass=ctg123 ansible_ssh_pass=ctg123 
+[ctgmmo]
+192.168.0.108 
 
 [training]
 192.168.0.240 ansible_user=training26  

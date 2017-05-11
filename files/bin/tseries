@@ -1,3 +1,7 @@
 #!/bin/sh
 
+
+
+mkdir -p ~/.tseries
+
 /usr/bin/tseries.bin-7.1 -s /etc/tseries/tseries.ctl $@
