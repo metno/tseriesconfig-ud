@@ -35,7 +35,6 @@
         state: latest
         update_cache: yes
 
-<<<<<<< HEAD
     - name: Installing tseries-script
       copy:
         src: "files/bin/tseries"
@@ -47,6 +46,3 @@
         src: "files/tseries.desktop"
         dest: "/usr/share/applications/tseries.desktop"
       tags: launcher
-=======
-        
->>>>>>> 41952c5e966299246059553bf8b925278aa0da58
