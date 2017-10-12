@@ -1,3 +1,11 @@
+tseriesconfig (7.1.0-1ubuntu1) xenial; urgency=low
+
+  * version 7.1 / xenial
+
+ -- Heiko Klein <heiko.klein@met.no>  Thu, 12 Oct 2017 10:00:09 +0100
+
+
+
 tseriesconfig (7.0.0-1ubuntu1) xenial; urgency=low
 
   * version 7.0 / xenial
