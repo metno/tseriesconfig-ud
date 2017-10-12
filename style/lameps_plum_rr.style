@@ -63,8 +63,8 @@ height=50
 font=NORMAL
 align=RIGHT
 color=BLACK
-text=© met.no
-#text=© Det Norske Meteorologiske Institutt
+text=Â© met.no
+#text=Â© Det Norske Meteorologiske Institutt
 [ADD]
 
 # date-line
@@ -283,7 +283,7 @@ height=30
 font=HEADER2
 align=CENTER
 color=DNMI_BLUE
-text=#$ nedbør
+text=#$ nedbÃ¸r
 [ADD]
 
 

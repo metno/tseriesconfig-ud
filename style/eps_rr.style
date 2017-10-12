@@ -63,7 +63,7 @@ height=50
 font=NORMAL
 align=RIGHT
 color=BLACK
-text=© Meteorologisk Institutt
+text=Â© Meteorologisk Institutt
 [ADD]
 
 # date-line
@@ -306,7 +306,7 @@ height=30
 font=HEADER2
 align=CENTER
 color=DNMI_BLUE
-text=#$ 6t nedbør
+text=#$ 6t nedbÃ¸r
 [ADD]
 
 

@@ -64,7 +64,7 @@ height=50
 font=NORMAL
 align=RIGHT
 color=BLACK
-text=© Meteorologisk Institutt
+text=Â© Meteorologisk Institutt
 [ADD]
 
 # date-line
@@ -311,7 +311,7 @@ minRange = 5.0
 minIsSet=FALSE
 #maxValue=360.0
 maxIsSet=FALSE
-text = T2m [°C]
+text = T2m [Â°C]
 align=LEFT
 axis = RIGHTRIGHT
 color=BLACK
@@ -435,7 +435,7 @@ height=30
 font=HEADER2
 align=CENTER
 color=DNMI_BLUE
-text=#$ temperatur og  nedbør
+text=#$ temperatur og  nedbÃ¸r
 [ADD]
 
 [NEW]

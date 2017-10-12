@@ -60,7 +60,7 @@ height=50
 font=NORMAL
 align=RIGHT
 color=BLACK
-text=© Meteorologisk Institutt
+text=Â© Meteorologisk Institutt
 [ADD]
 
 # date-line
@@ -164,7 +164,7 @@ minRange = 5.0
 
 minIsSet=FALSE
 maxIsSet=FALSE
-text = T2m [°C]
+text = T2m [Â°C]
 align=LEFT
 axis = LEFTLEFT
 color=BLACK

@@ -62,7 +62,7 @@ height=50
 font=NORMAL
 align=RIGHT
 color=BLACK
-text=© Meteorologisk Institutt
+text=Â© Meteorologisk Institutt
 [ADD]
 
 # date-line
@@ -167,7 +167,7 @@ minRange = 5.0
 minIsSet=FALSE
 #maxValue=360.0
 maxIsSet=FALSE
-text = T2m [°C]
+text = T2m [Â°C]
 align=LEFT
 axis = LEFTLEFT
 color=BLACK
@@ -291,7 +291,7 @@ type=LINE
 yaid=0
 parameter=TT_O,0,x,OBS
 color=RED
-text=T2m obs [°C]
+text=T2m obs [Â°C]
 lineWidth=4
 linePattern=DOTTED
 patternInColour=TRUE
